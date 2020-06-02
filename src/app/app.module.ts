@@ -8,10 +8,13 @@ import { SecondComponent } from './component/second/second.component';
 import { ThirdComponent } from './component/third/third.component';
 import { FourthComponent } from './component/fourth/fourth.component';
 import { FifthComponent } from './component/fifth/fifth.component';
-import {AuthGuard} from './gurd/auth.guard';
 import { SecondaComponent } from './component/second/seconda/seconda.component';
 import { SecondbComponent } from './component/second/secondb/secondb.component';
 import { SecondcComponent } from './component/second/secondc/secondc.component';
+
+import {AuthGuard} from './gurd/auth.guard';
+import { ChildauthGuard } from './gurd/childauth.guard';
+import { ResolveGuard } from './gurd/resolve.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { SecondcComponent } from './component/second/secondc/secondc.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,ChildauthGuard,ResolveGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

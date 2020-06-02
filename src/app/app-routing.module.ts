@@ -11,6 +11,7 @@ import {SecondbComponent} from './component/second/secondb/secondb.component';
 import {SecondcComponent} from './component/second/secondc/secondc.component';
 import { AuthGuard } from './gurd/auth.guard';
 import { ChildauthGuard } from './gurd/childauth.guard';
+import { ResolveGuard } from './gurd/resolve.guard';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
       {path:'second-c',component:SecondcComponent,data : ['Supervisior']},
     ]},
   { path:'third',component:ThirdComponent},
-  { path:'fourth',component:FourthComponent},
+  { path:'fourth',component:FourthComponent ,resolve : {data:ResolveGuard}},
   { path:'fifth',component:FifthComponent},
   { path :'' ,redirectTo :"/first", pathMatch:'full'}
 ];

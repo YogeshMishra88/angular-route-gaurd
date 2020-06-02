@@ -1,3 +1,23 @@
-<p>
-  fourth works!
-</p>
+<div class="container">
+  <table class="table table-bordered mt-5">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="employee.length > 0">
+        <tr *ngFor="let emp of employee">
+          <td>{{emp.fname}}</td>
+          <td>{{emp.lname}}</td>
+          <td>{{emp.email}}</td>
+        </tr>
+      </ng-container>
+     <tr *ngIf="employee.length==0">
+       <td colspan="3" class="text-center text-danger">Please wait while fetching data....</td>
+     </tr>
+    </tbody>
+  </table>
+</div>
