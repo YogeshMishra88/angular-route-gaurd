@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { SecondcComponent } from './component/second/secondc/secondc.component';
 import {AuthGuard} from './gurd/auth.guard';
 import { ChildauthGuard } from './gurd/childauth.guard';
 import { ResolveGuard } from './gurd/resolve.guard';
+import { CheckGuard } from './gurd/check.guard';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { ResolveGuard } from './gurd/resolve.guard';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [AuthGuard,ChildauthGuard,ResolveGuard],
+  providers: [AuthGuard,ChildauthGuard,ResolveGuard,CheckGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

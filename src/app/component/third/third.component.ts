@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-third',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThirdComponent implements OnInit {
 
+    name : string ="Anderson";
+  @ViewChild('customForm') public userFrm;
   constructor() { }
 
   ngOnInit() {
