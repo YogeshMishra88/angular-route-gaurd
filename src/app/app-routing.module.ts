@@ -10,17 +10,18 @@ import {SecondaComponent} from './component/second/seconda/seconda.component';
 import {SecondbComponent} from './component/second/secondb/secondb.component';
 import {SecondcComponent} from './component/second/secondc/secondc.component';
 import { AuthGuard } from './gurd/auth.guard';
+import { ChildauthGuard } from './gurd/childauth.guard';
 
 
 const routes: Routes = [
   { path:'first',component:FirstComponent,canActivate:[AuthGuard],data:['ADMIN']},
   { path:'second',
     component:SecondComponent,
+    canActivateChild : [ChildauthGuard],
     children :[
-      {path:'second-a',component:SecondaComponent},
-      {path:'second-b',component:SecondbComponent},
-      {path:'second-c',component:SecondcComponent},
-      {path:'',redirectTo:'/second/second-a',pathMatch:'full'}
+      {path:'second-a',component:SecondaComponent,data : ['Supervisior']},
+      {path:'second-b',component:SecondbComponent,data : ['ADMIN']},
+      {path:'second-c',component:SecondcComponent,data : ['Supervisior']},
     ]},
   { path:'third',component:ThirdComponent},
   { path:'fourth',component:FourthComponent},
